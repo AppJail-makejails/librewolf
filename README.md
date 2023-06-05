@@ -110,7 +110,7 @@ appjail run -s librewolf_open -p url=http://example.org librewolf
 
 ### Arguments
 
-* `librewolf_enable_3d` (default: `1`): Install with `graphics/mesas-dri` and add the `librewolf` user to the `video` group.
+* `librewolf_enable_3d` (default: `1`): Install with `graphics/mesa-dri` and add the `librewolf` user to the `video` group.
 * `librewolf_enable_webcamd` (default: `0`): Create a group named `webcamd` (GID: `145`) and add the `librewolf` to it.
 
 ## Recomendation
