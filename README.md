@@ -100,7 +100,7 @@ appjail makejail -j librewolf -- --network development
 appjail start librewolf
 ```
 
-After Makejail builds the jail, you can run Badwolf using the `librewolf_open` custom stage:
+After Makejail builds the jail, you can run LibreWolf using the `librewolf_open` custom stage:
 
 ```sh
 appjail run -s librewolf_open librewolf
