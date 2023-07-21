@@ -110,6 +110,37 @@ appjail run -s librewolf_open -p url=http://example.org librewolf
 
 ### Arguments
 
+* `librewolf_tag` (default: `13.2-full`): see [#tags](#tags).
+
+## How to build the Image
+
+Make any changes you want to your image.
+
+```
+INCLUDE options/network.makejail
+INCLUDE gh+AppJail-makejails/librewolf --file build.makejail
+```
+
+Build the jail:
+
+```sh
+appjail makejail -j librewolf -- \
+    --librewolf_enable_webcamd 1
+```
+
+Remove unportable or unnecessary files and directories and export the jail:
+
+```sh
+appjail stop librewolf
+appjail cmd local librewolf sh -c "rm -f var/log/*"
+appjail cmd local librewolf sh -c "rm -f var/cache/pkg/*"
+appjail cmd local librewolf sh -c "rm -f var/run/*"
+appjail cmd local librewolf vi etc/rc.conf
+appjail image export librewolf
+```
+
+### Arguments
+
 * `librewolf_enable_3d` (default: `1`): Install with `graphics/mesa-dri` and add the `librewolf` user to the `video` group.
 * `librewolf_enable_webcamd` (default: `0`): Create a group named `webcamd` (GID: `145`) and add the `librewolf` user to it.
 
@@ -126,3 +157,10 @@ appjail run -s librewolf_open -p url=http://example.org librewolf
 <p align="center">
     <img src="https://i.imgur.com/1kZCy3f.png" />
 </p>
+
+## Tags
+
+| Tag         | Arch    | Version           | Type   | `librewolf_enable_3d` | `librewolf_enable_webcamd` |
+| ----------- | ------- | ----------------- | ------ | --------------------- | -------------------------- |
+| `13.2-full` | `amd64` | `13.2-RELEASE-p1` | `thin` |           1           |              1             |
+| `13.1-full` | `amd64` | `13.1-RELEASE-p8` | `thin` |           1           |              1             |

@@ -1,0 +1,23 @@
+INCLUDE options/options.makejail
+
+ARG librewolf_enable_3d=1
+ARG librewolf_enable_webcamd=0
+
+CMD pw useradd \
+	-n librewolf \
+	-c "Custom version of Firefox, focused on privacy, security and freedom" \
+	-d /home/librewolf \
+	-s /bin/sh
+CMD mkdir -p /home/librewolf
+CMD chown librewolf:librewolf /home/librewolf
+
+RAW if [ "${librewolf_enable_3d}" != "0" ]; then
+	PKG mesa-dri
+	CMD pw groupmod -n video -m librewolf
+RAW fi
+
+RAW if [ "${librewolf_enable_webcamd}" != "0" ]; then
+	CMD pw groupadd -n webcamd -g 145 -M librewolf
+RAW fi
+
+COPY usr
