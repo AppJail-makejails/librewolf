@@ -3,6 +3,8 @@ INCLUDE options/options.makejail
 ARG librewolf_enable_3d=1
 ARG librewolf_enable_webcamd=0
 
+PKG librewolf
+
 CMD pw useradd \
 	-n librewolf \
 	-c "Custom version of Firefox, focused on privacy, security and freedom" \
