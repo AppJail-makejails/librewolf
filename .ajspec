@@ -1,17 +1,9 @@
-tags: 13.1-full
-13.1-full.arch: amd64
-13.1-full.name: "librewolf"
-13.1-full.timestamp.amd64: 1689939785
-13.1-full.sum.amd64: 0ef5c1da9bfb0d1b4a50b04e6e8f410f32d13688acd45224fba19e1fe4754427
-13.1-full.size.amd64: 407076812
-13.1-full.source.amd64: https://dtxdf.duckdns.org/oc92za3bzf/librewolf_13_1_full_amd64_image_appjail
-13.1-full.source.amd64+: https://anonget.onrender.com/oc92za3bzf/librewolf_13_1_full_amd64_image_appjail
-
-tags+: 13.2-full
+tags: 13.2-full
 13.2-full.arch: amd64
 13.2-full.name: "librewolf"
-13.2-full.timestamp.amd64: 1689939700
-13.2-full.sum.amd64: 95d60a9f7510db234deac42f30d9218939df4764f3af70f157c3d9674f2232c7
-13.2-full.size.amd64: 407047064
-13.2-full.source.amd64: https://dtxdf.duckdns.org/Hc22z539z4/librewolf_13_2_full_amd64_image_appjail
-13.2-full.source.amd64+: https://anonget.onrender.com/Hc22z539z4/librewolf_13_2_full_amd64_image_appjail
+13.2-full.timestamp.amd64: 1691183759
+13.2-full.sum.amd64: 490c5ed09cb6384443a2341facc24bd63de58d78d3d028b5bdcf72d231412494
+13.2-full.size.amd64: 406834928
+13.2-full.source.amd64: https://dtxdf.duckdns.org/d1G3O56bz8/librewolf_13_2_full_amd64_image_appjail
+13.2-full.source.amd64+: https://storm-bsd.duckdns.org/d1G3O56bz8/librewolf_13_2_full_amd64_image_appjail
+13.2-full.source.amd64+: https://anonget.onrender.com/d1G3O56bz8/librewolf_13_2_full_amd64_image_appjail
