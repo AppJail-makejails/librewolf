@@ -1,7 +1,8 @@
-tags: 13.2-full
+tags+: 13.2-full
 13.2-full.arch: amd64
 13.2-full.name: "librewolf"
-13.2-full.timestamp.amd64: 1695831140
-13.2-full.sum.amd64: 058f62a83f2812e0894e2110d93111584d1f2ff2642d81ce4b6b9dcc4a8c0222
-13.2-full.size.amd64: 401378368
-13.2-full.source.amd64: "http://appjail.hpc.at/librewolf/13.2-full-amd64-image.appjail"
+13.2-full.timestamp.amd64: 1697295953
+13.2-full.sum.amd64: a8369c3657c617d349a2381b730b459f745f84b348b98c44721510739371943e
+13.2-full.size.amd64: 397201040
+13.2-full.source.amd64: https://images.all101bsd.download/librewolf/13.2-full-amd64-image.appjail
+13.2-full.source.amd64+: http://appjail.hpc.at/librewolf/13.2-full-amd64-image.appjail
