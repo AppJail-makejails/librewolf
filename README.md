@@ -20,83 +20,13 @@ librewolf.net
 
 ## How to use this Makejail
 
-```
-INCLUDE options/network.makejail
-INCLUDE gh+AppJail-makejails/librewolf
-
-OPTION mount_devfs
-OPTION devfs_ruleset=12
-OPTION copydir=files
-OPTION file=/etc/rc.conf
-OPTION x11
-```
-
-Where `options/network.makejail` are the options that suit your environment, for example:
-
-```
-ARG network
-ARG interface=librewolf
-
-OPTION virtualnet=${network}:${interface} default
-OPTION nat
-```
-
-A generic ruleset that allows LibreWolf to run smoothly is as follows:
-
-```
-[devfsrules_librewolf=12]
-add include $devfsrules_hide_all
-add include $devfsrules_unhide_basic
-add include $devfsrules_unhide_login
-
-# I/O sound devices
-add path 'sndstat' unhide
-
-# USB (e.g.: webcam)
-add path 'usb' unhide
-add path 'usb/*' unhide
-
-# 3D support
-add path 'dri' unhide
-add path 'dri/*' unhide
-add path 'drm' unhide
-add path 'drm/*' unhide
-add path 'pci' unhide
-
-# webcam
-add path 'cuse*' unhide
-add path 'video*' unhide
-
-# soundcard
-add path 'mixer*' unhide
-add path 'dsp*' unhide
-```
-
-If you want to limit what the `librewolf` jail can do, comment all you want.
-
-The tree structure of the `files/` directory is as follows:
-
-```
-# tree -pug files/
-[drwxr-xr-x root     wheel   ]  files/
-└── [drwxr-xr-x root     wheel   ]  etc
-    └── [-rw-r--r-- root     wheel   ]  rc.conf
-
-1 directory, 1 file
-```
-
-Where `rc.conf` is your custom `rc.conf(5)` file, for example:
-
-```
-clear_tmp_X="NO"
-```
-
-The `rc.conf(5)` file above sets `clear_tmp_X` to `NO` to not remove the sockets and various related files before the jail starts.
-
 Open a shell and run `appjail makejail` and `appjail start`:
 
 ```sh
-appjail makejail -j librewolf -- --network development
+appjail makejail -j librewolf -f gh+AppJail-makejails/librewolf \
+    -o virtualnet=":<random> default" \
+    -o nat \
+    -o x11
 appjail start librewolf
 ```
 
@@ -111,21 +41,18 @@ appjail run -s librewolf_open -p url=http://example.org librewolf
 ### Arguments
 
 * `librewolf_tag` (default: `13.2-full`): see [#tags](#tags).
+* `librewolf_sound_devices` (default: `1`): Enables `sndstat`, `mixer*` and `dsp*` devices.
+* `librewolf_3d_devices` (default: `1`): Enables `dri`, `dri/*`, `drm`, `drm/*` and `pci` devices.
+* `librewolf_webcam_devices` (default: `1`): Enables `cuse*`, `video*`, `usb` and `usb/*` devices.
 
 ## How to build the Image
 
-Make any changes you want to your image.
-
-```
-INCLUDE options/network.makejail
-INCLUDE gh+AppJail-makejails/librewolf --file build.makejail
-```
-
-Build the jail:
-
 ```sh
-appjail makejail -j librewolf -- \
-    --librewolf_enable_webcamd 1
+appjail makejail -j librewolf -f "gh+AppJail-makejails/librewolf --file build.makejail" \
+    -o virtualnet=":<random> default" \
+    -o nat \
+        -- \
+        --librewolf_enable_webcamd 1
 ```
 
 Remove unportable or unnecessary files and directories and export the jail:

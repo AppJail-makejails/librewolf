@@ -23,3 +23,5 @@ RAW if [ "${librewolf_enable_webcamd}" != "0" ]; then
 RAW fi
 
 COPY usr
+
+SYSRC clear_tmp_X=NO
