@@ -89,4 +89,4 @@ appjail image export librewolf
 
 | Tag         | Arch    | Version           | Type   | `librewolf_enable_3d` | `librewolf_enable_webcamd` |
 | ----------- | ------- | ----------------- | ------ | --------------------- | -------------------------- |
-| `13.2-full` | `amd64` | `13.2-RELEASE-p4` | `thin` |           1           |              1             |
+| `13.2-full` | `amd64` | `13.2-RELEASE` | `thin` |           1           |              1             |
