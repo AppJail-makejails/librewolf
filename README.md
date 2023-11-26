@@ -45,32 +45,6 @@ appjail run -s librewolf_open -p url=http://example.org librewolf
 * `librewolf_3d_devices` (default: `1`): Enables `dri`, `dri/*`, `drm`, `drm/*` and `pci` devices.
 * `librewolf_webcam_devices` (default: `1`): Enables `cuse*`, `video*`, `usb` and `usb/*` devices.
 
-## How to build the Image
-
-```sh
-appjail makejail -j librewolf -f "gh+AppJail-makejails/librewolf --file build.makejail" \
-    -o virtualnet=":<random> default" \
-    -o nat \
-        -- \
-        --librewolf_enable_webcamd 1
-```
-
-Remove unportable or unnecessary files and directories and export the jail:
-
-```sh
-appjail stop librewolf
-appjail cmd local librewolf sh -c "rm -f var/log/*"
-appjail cmd local librewolf sh -c "rm -f var/cache/pkg/*"
-appjail cmd local librewolf sh -c "rm -f var/run/*"
-appjail cmd local librewolf vi etc/rc.conf
-appjail image export librewolf
-```
-
-### Arguments
-
-* `librewolf_enable_3d` (default: `1`): Install with `graphics/mesa-dri` and add the `librewolf` user to the `video` group.
-* `librewolf_enable_webcamd` (default: `0`): Create a group named `webcamd` (GID: `145`) and add the `librewolf` user to it.
-
 ## Recommendation
 
 1.- Use hardware acceleration when available.
