@@ -33,9 +33,10 @@ appjail start librewolf
 After Makejail builds the jail, you can run LibreWolf using the `librewolf_open` custom stage:
 
 ```sh
+xhost +
 appjail run -s librewolf_open librewolf
 # or to open a specific website:
-appjail run -s librewolf_open -p url=http://example.org librewolf
+appjail run -s librewolf_open -V URL=http://example.org librewolf
 ```
 
 ### Arguments
