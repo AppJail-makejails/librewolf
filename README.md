@@ -41,7 +41,7 @@ appjail run -s librewolf_open -V URL=http://example.org librewolf
 
 ### Arguments
 
-* `librewolf_tag` (default: `13.3-full`): see [#tags](#tags).
+* `librewolf_tag` (default: `13.4-full`): see [#tags](#tags).
 * `librewolf_sound_devices` (default: `1`): Enables `sndstat`, `mixer*` and `dsp*` devices.
 * `librewolf_3d_devices` (default: `1`): Enables `dri`, `dri/*`, `drm`, `drm/*` and `pci` devices.
 * `librewolf_webcam_devices` (default: `1`): Enables `cuse*`, `video*`, `usb` and `usb/*` devices.
@@ -64,5 +64,5 @@ appjail run -s librewolf_open -V URL=http://example.org librewolf
 
 | Tag         | Arch    | Version        | Type   | `librewolf_enable_3d` | `librewolf_enable_webcamd` |
 | ----------- | ------- | -------------- | ------ | --------------------- | -------------------------- |
-| `13.3-full` | `amd64` | `13.3-RELEASE` | `thin` |         `1`           |            `1`             |
+| `13.4-full` | `amd64` | `13.4-RELEASE` | `thin` |         `1`           |            `1`             |
 | `14.1-full` | `amd64` | `14.1-RELEASE` | `thin` |         `1`           |            `1`             |
