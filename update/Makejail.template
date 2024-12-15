@@ -1,0 +1,42 @@
+ARG librewolf_sound_devices=1
+ARG librewolf_3d_devices=1
+ARG librewolf_webcam_devices=1
+ARG librewolf_tag=%%TAG1%%-full
+
+INCLUDE options/options.makejail
+
+OPTION device=include \$devfsrules_hide_all
+OPTION device=include \$devfsrules_unhide_basic
+OPTION device=include \$devfsrules_unhide_login
+
+FROM --entrypoint gh+AppJail-makejails/librewolf librewolf:${librewolf_tag}
+
+RAW if [ "${librewolf_sound_devices}" != 0 ]; then
+	DEVICE path 'sndstat' unhide
+	DEVICE path 'mixer*' unhide
+	DEVICE path 'dsp*' unhide
+RAW fi
+
+RAW if [ "${librewolf_3d_devices}" != 0 ]; then
+	DEVICE path 'dri' unhide
+	DEVICE path 'dri/*' unhide
+	DEVICE path 'drm' unhide
+	DEVICE path 'drm/*' unhide
+	DEVICE path 'pci' unhide
+RAW fi
+
+RAW if [ "${librewolf_webcam_devices}" != 0 ]; then
+	DEVICE path 'cuse*' unhide
+	DEVICE path 'video*' unhide
+	DEVICE path 'usb' unhide
+	DEVICE path 'usb/*' unhide
+RAW fi
+
+STOP
+
+STAGE custom:librewolf_open
+
+ENV DISPLAY=:0
+
+USER librewolf
+RUN librewolf.sh
