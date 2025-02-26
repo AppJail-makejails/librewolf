@@ -1,16 +1,17 @@
 tags+: 13.4-full
 13.4-full.arch: amd64
 13.4-full.name: "librewolf"
-13.4-full.timestamp.amd64: 1738083206
-13.4-full.sum.amd64: cba566ca77af816d21908551bd778a7e34a62d3e47cce33b86ad2bcaeb9320e6
-13.4-full.size.amd64: 599955489
+13.4-full.timestamp.amd64: 1740534070
+13.4-full.sum.amd64: 72ca83e5f9cb336048eb811fa06b2f28e22b2bdd6a07c1bac12975b41f6576a1
+13.4-full.size.amd64: 600143126
 13.4-full.source.amd64: "http://appjail.hpc.at/librewolf/13.4-full-amd64-image.appjail"
 13.4-full.source.amd64+: "https://images.all101bsd.download/librewolf/13.4-full-amd64-image.appjail"
 tags+: 14.2-full
 14.2-full.arch: amd64
 14.2-full.name: "librewolf"
-14.2-full.timestamp.amd64: 1738083767
-14.2-full.sum.amd64: a747554c0afb869c658180ca6b2a466b7ab792a76ca8042c7efcda8886e5a1de
-14.2-full.size.amd64: 601339328
+14.2-full.timestamp.amd64: 1740535624
+14.2-full.sum.amd64: 9377f882bb1a5a3ca200b99859e5db87677a6e32487433d0a2605a4a0ea0411c
+14.2-full.size.amd64: 599447475
 14.2-full.source.amd64: "http://appjail.hpc.at/librewolf/14.2-full-amd64-image.appjail"
 14.2-full.source.amd64+: "https://images.all101bsd.download/librewolf/14.2-full-amd64-image.appjail"
+maintenance: "This image is uploading, please wait a moment and try again. If you are importing this image using a Makejail that has the '--<name>_ajspec' argument, you can use the 'reproduce' method to use 'appjail-reproduce'. See 'appjail-image(5)' for details."
