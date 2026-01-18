@@ -2,7 +2,7 @@ ARG librewolf_sound_devices=1
 ARG librewolf_3d_devices=1
 ARG librewolf_webcam_devices=1
 ARG librewolf_ajspec=gh+AppJail-makejails/librewolf
-ARG librewolf_tag=13.5-full
+ARG librewolf_tag=14.3-full
 
 INCLUDE options/options.makejail
 

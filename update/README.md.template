@@ -66,4 +66,4 @@ appjail run -s librewolf_open -V URL=http://example.org librewolf
 | Tag         | Arch    | Version        | Type   | `librewolf_enable_3d` | `librewolf_enable_webcamd` |
 | ----------- | ------- | -------------- | ------ | --------------------- | -------------------------- |
 | `%%TAG1%%-full` | `amd64` | `%%TAG1%%-RELEASE` | `thin` |         `1`           |            `1`             |
-| `%%TAG2%%-full` | `amd64` | `%%TAG2%%-RELEASE` | `thin` |         `1`           |            `1`             |
+| `%%TAG2%%-full` | `amd64` | `%%TAG2%%` | `thin` |         `1`           |            `1`             |
